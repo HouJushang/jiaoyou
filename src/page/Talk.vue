@@ -1,6 +1,6 @@
 <template>
   <div class="talkPage">
-    1111
+    talk页面
   </div>
 </template>
 <style lang="sass">

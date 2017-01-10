@@ -9,12 +9,16 @@
   </div>
 </template>
 <style lang="sass">
+  .indexPage
+    height: 100%
   .indexBody
     position: absolute
     top: 45px
     bottom: 49px
     left: 0
     right: 0
+    overflow-y: auto
+    -webkit-overflow-scrolling: touch
 </style>
 <script>
   import headerComponent from '../../components/header/HeaderCompoent.vue'
