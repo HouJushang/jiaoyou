@@ -11,13 +11,14 @@
         筛选
       </dd>
     </dl>
-    <div class="item" v-for="(item, index) in [1,2,3,4,5,6]">
+    <div class="item" v-for="(item, index) in list">
       <div class="top">
-        <img class="avatar" src="https://apic.douyucdn.cn/upload/avanew/face/201612/11/12/562db4c862ebfa4cc52030e511bed656_middle.jpg?rltime" />
+        <img class="avatar" :src="item.avatar" />
         <img src="../assets/img/online.png" width="18"/>
-        韩小雅
-        <img src="../assets/img/girl.png" width="18"/>
-        <img src="../assets/img/daren.png" width="18"/>
+        {{item.name}}
+        <img src="../assets/img/girl.png" width="18" v-if="item.sex === 'girl'"/>
+        <img src="../assets/img/boy.png" width="18" v-else="item.sex === 'boy'"/>
+        <img src="../assets/img/daren.png" width="18" v-if="item.vip"/>
       </div>
       <div class="showImage" style="background-image: url('https://rpic.douyucdn.cn/appCovers/2016/12/07/265688_20161207022140_small.jpg');">
       </div>
@@ -27,6 +28,16 @@
         </div>
         <div class="voliceRight">
           52''<span></span>
+        </div>
+      </div>
+      <div class="meetChat">
+        <div class="meetLeft">
+          <img src="../assets/img/meed.png" height="38"/>
+          打赏
+          <img src="../assets/img/meedChat.png" height="30"/>
+        </div>
+        <div class="meetRight">
+          和TA聊天
         </div>
       </div>
     </div>
@@ -76,8 +87,9 @@
         width: 100%
         background-size: cover
       .voice
-        margin: 10px 0
+        padding: 10px 0
         display: flex
+        border-bottom: 1px solid #ececec
         .voliceLeft
           width: 231px
           height: 42px
@@ -99,14 +111,28 @@
             background-color: #ff5021
             @include border-radius(100%)
             margin-left: 8px
-
-
+      .meetChat
+        padding: 11px 0
+        @include flex()
+        >div
+          @include flex-grow(1)
+          text-align: center
+          height: 38px
+          line-height: 39px
+        .meetLeft
+          color: #ffa921
+          img
+            vertical-align: middle
+            margin-left: 5px
+            margin-right: 5px
+        .meetRight
+          color: #bbbbbb
 </style>
 <script>
-  import {indexStatus, audio} from '../data.js'
+  import {indexStatus, audio, list} from '../data.js'
   const hallPage = {
     data () {
-      return {title: '这里是首页'}
+      return {list: list}
     },
     beforeCreate () {
       indexStatus.navAction = 'hall'
