@@ -21,8 +21,8 @@
     -webkit-overflow-scrolling: touch
 </style>
 <script>
-  import headerComponent from '../../components/header/HeaderCompoent.vue'
-  import navComponent from '../../components/nav/NavCompoent.vue'
+  import headerComponent from '../../components/header/HeaderComponent.vue'
+  import navComponent from '../../components/nav/NavComponent.vue'
   import {indexStatus} from '../../data.js'
   export default{
     name: 'index',

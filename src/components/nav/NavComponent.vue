@@ -7,7 +7,7 @@
       </router-link>
     </dd>
     <dd>
-      <router-link :to="{name: 'talk'}">
+      <router-link :to="{name: 'concern'}">
         <img src="../../assets/img/talkAction.png" v-if="active =='talk'">
         <img src="../../assets/img/talk.png" v-else>
       </router-link>

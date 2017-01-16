@@ -5,6 +5,7 @@ import Hall from './page/Hall.vue'
 import Talk from './page/Talk.vue'
 import Message from './page/Message.vue'
 import Personal from './page/Personal.vue'
+import Concern from './page/talk/Concern.vue'
 
 Vue.use(VueRouter)
 
@@ -13,8 +14,23 @@ const routes = [
     path: '/index',
     component: Index,
     children: [
-      {path: 'hall', name: 'hall', component: Hall},
-      {path: 'talk', name: 'talk', component: Talk},
+      {
+        path: 'hall',
+        name: 'hall',
+        component: Hall
+      },
+      {
+        path: 'talk',
+        name: 'talk',
+        component: Talk,
+        children: [
+          {
+            path: 'concern',
+            name: 'concern',
+            component: Concern
+          }
+        ]
+      },
       {path: 'message', name: 'message', component: Message},
       {path: 'personal', name: 'personal', component: Personal}
     ]
