@@ -1,21 +1,20 @@
 <template>
-  <div class="concern">
-    <TalkNavComponent action="1"></TalkNavComponent>
+  <div class="fans">
+    <TalkNavComponent action="2"></TalkNavComponent>
     <ThemeComponent v-for="item in data" :data="item"></ThemeComponent>
   </div>
 </template>
 <style lang='sass'>
-  .concern
-    overflow: hidden
+  .fans
 </style>
 <script>
-  import {concern} from '../../data.js'
+  import {fans} from '../../data.js'
   import ThemeComponent from '../../components/theme/ThemeComponent.vue'
   import TalkNavComponent from '../../components/talkNav/TalkNavComponent.vue'
   export default{
     data () {
       return {
-        'data': concern
+        'data': fans
       }
     },
     methods: {

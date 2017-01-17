@@ -1,6 +1,6 @@
 <template>
   <div>
-    Message
+    这里是系统消息列表
   </div>
 </template>
 <style lang="sass">

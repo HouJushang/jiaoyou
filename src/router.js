@@ -6,6 +6,8 @@ import Talk from './page/Talk.vue'
 import Message from './page/Message.vue'
 import Personal from './page/Personal.vue'
 import Concern from './page/talk/Concern.vue'
+import Fans from './page/talk/Fans.vue'
+import Chat from './page/talk/Chat.vue'
 
 Vue.use(VueRouter)
 
@@ -28,6 +30,16 @@ const routes = [
             path: 'concern',
             name: 'concern',
             component: Concern
+          },
+          {
+            path: 'fans',
+            name: 'fans',
+            component: Fans
+          },
+          {
+            path: 'chat',
+            name: 'chat',
+            component: Chat
           }
         ]
       },
