@@ -114,7 +114,7 @@ export const chat = {
       avatar: 'https://apic.douyucdn.cn/upload/avanew/face/201612/11/12/562db4c862ebfa4cc52030e511bed656_middle.jpg?rltime',
       content: '你还在线吗，我有事情要找你',
       time: '22:46',
-      number: 23
+      number: 233333
     },
     {
       name: '韩小雅',

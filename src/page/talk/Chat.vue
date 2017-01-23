@@ -14,7 +14,7 @@
           <p>
             {{item.time}}
           </p>
-          <p>
+          <p v-bind:class="{more10: item.number >= 10 }" v-show="item.number > 0">
             {{item.number}}
           </p>
         </div>
@@ -32,6 +32,7 @@
         border-bottom: 1px solid #ececec
         padding: 10px 0
         overflow: hidden
+        height: 43px
         @include flex()
         .avatar
           width: 43px
@@ -43,19 +44,32 @@
         .chatNumber
           width: 35px
           p
+            text-align: right
             &:first-child
               font-size: 11px
               color: #999
+              margin-top: 2px
             &:last-child
-              font-size: 14px
+              float: right
+              background-color: red
+              display: inline-block
+              font-size: 12px
+              height: 18px
+              @include border-radius(9px)
+              color: #fff
+              line-height: 19px
+              text-align: center
+              min-width: 18px
+              margin-top: 9px
+              &.more10
+                padding: 0 4px
         .chatContent
+          height: 43px
           @include flex-grow(1)
-          @include flex()
-          @include align-items(center)
-          @include flex-direction(column)
           p
             &:first-child
               font-size: 16px
+              line-height: 25px
             &:last-child
               font-size: 14px
               color: #999999
